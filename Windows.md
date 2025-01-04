@@ -79,3 +79,22 @@ Download drivers: [Download X540-AT2](https://www.intel.com/content/www/us/en/do
 Run: `winget install GNU.Nano`
 to install nano into windows terminal
 
+### Git
+Add the following to the .gitconfig file:
+- Sets nano as default editor
+- Sets email and name
+- Auto squash fixups
+- Adds fixup command
+```
+[core]
+	editor = nano
+[user]
+	email = alex.d.chapman@outlook.com
+	name = Alex Chapman
+[rebase]
+        autosquash = true
+[alias]
+        fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+```
+
+
